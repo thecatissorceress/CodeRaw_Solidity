@@ -43,6 +43,7 @@ enum typeCoin { E20 , ETH}
 
 uint public totalSigner;
 uint public quorumMajority;
+
 // Initializing/Defining the Signer Role
 bytes32 public constant SIGNER_ROLE = keccak256("SIGNER_ROLE"); 
 
@@ -157,6 +158,10 @@ vote.isVoter[msg.sender] == false;
 vote.approve--;
 
 }
+
+
+
+
 // Execute the transaction with require
 function finalizeTransaction(uint _transactionId) public roleAccepted() {
 Transaction storage targetTransaction = listOfTransaction[_transactionId];
